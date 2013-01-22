@@ -43,29 +43,30 @@ namespace :db do
         cur_page = Nokogiri::HTML(open(pg))
         #grabs licensee
         event.licensee = cur_page.css('.licensee').text.strip
-
+        
         #grabs event date
         event.date = cur_page.css('span.event_date').text.strip
-
+        
         #grabs event title/performer
         event.title = cur_page.css('.eventTitle').text.strip
-
+        
         #grabs intro/bio paragraph
         event.bio = cur_page.css('.event-general-notes').text.strip
-
+        
         #grabs series info (if available)
         event.series_info = cur_page.css('.evnt-series').text.gsub!(/\s+/," ")
-
+        
         #grabs list of performers
         performers = cur_page.css('.event-left-display ul li')[0].text.gsub(/\.\.+|^\n/,", ")
         performers.gsub!("St. Luke's", "St. Luke's, ")
         event.performers = performers
-
+        
         #grabs image url and uses regexes to turn them into useable links
         img_url = cur_page.css('img.event').map { |link| link['src'].match(regex_img).to_s.gsub!(/\i\./, "www.") }
         event.img_url = img_url.to_s
-
+        
         event.save!
+        puts "grabbed the data, shoved it into the database."
         
         sleep 2
         
