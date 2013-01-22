@@ -1,0 +1,42 @@
+// Place all the styles related to the Gallery controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.gallery-img-container {
+	position:relative;
+	display:inline;
+	float:left;
+	background-color:#444;
+	cursor:pointer;
+	height:157px;
+	margin:0 3px 3px 0;
+	width:157px;
+	overflow:hidden;
+	
+	img {
+		position:relative;
+		height:157px;
+		width:100%;
+	}
+}
+
+.gallery-img-container:hover {
+	box-shadow: inset 0px 2px 30px rgba(0, 0, 0, 1);
+	-moz-box-shadow: inset 0px 2px 30px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: inset 0px 2px 30px rgba(0, 0, 0, 1);
+	-o-box-shadow: inset 0px 2px 30px rgba(0, 0, 0, 1);
+	
+	
+}
+
+.gallery-img-container img:hover {
+	opacity:0.4;
+	
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s; /* Firefox 4 */
+	-webkit-transition-duration: 0.4s; /* Safari and Chrome */
+	-o-transition-duration: 0.4s; /* Opera */
+}

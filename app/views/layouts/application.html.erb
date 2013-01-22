@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carnegie Hall Sound</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="main">
+		<div class="header group">
+			<h1><span>Carnegie Hall</span> Sound</h1>
+			<div class="subhead">
+				<p>Listen to all of Carnegie Hall's upcoming events, without getting lost.</p>
+			</div>
+			<div id="nav">
+				<h2><span>Carnegie Hall</span> Sound</h2>
+				<ul>
+					<li id="allEvents">all</li>
+					<li id="carnEvents">Carnegie Hall</li>
+					<li id="non-carnEvents">non-carnegie hall</li>
+				</ul>
+			</div>
+		</div>
+		<div id="view" class="group">
+			<div class="tooltip-gallery">
+				<div class="tooltip-gallery-box">Name<br />Location</div>
+				<div class="tooltip-gallery-triangle"></div>
+			</div>
+			<%= yield %>
+		</main>
+	</div>
+	<div id="footer">
+		<h4>made, with love, by <span>troy eric griggs</span></h4>
+	</div>
+</body>
+</html>

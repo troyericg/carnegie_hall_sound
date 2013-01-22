@@ -1,0 +1,40 @@
+<!-- <h1>List#index</h1>
+<p>Find me in app/views/list/index.html.erb</p> -->
+
+
+<% @events.each do |evnt| %>
+
+	<div id="<%= evnt.id %>" class="event-entry group" attr-presenter="<%= evnt.licensee %>">
+		<div class="column1-controls group">
+			<div class="player-play"></div>
+			<div class="player-pause">
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+		</div>
+		<div class="column2">
+			<span class="kicker"><p><%= evnt.licensee %></p></span>
+			<span class="date"><p><%= evnt.date %></p></span>
+			<h3><%= evnt.title %> </h3>
+			<p class="bio"><%= evnt.bio %></p>
+			<p class="info"><%= evnt.series_info %></p>
+			<div class="two-column-container">
+				<div class="half-column-left">
+					<h4>Performers</h4>
+					<p><%= evnt.performers %></p>
+				</div>
+				<div class="half-column-right">
+					<h4>Program (TK)</h4>
+					<p><%= evnt.performers %></p>
+				</div>
+			</div>
+		</div>
+		<div class="column3-img group">
+			<div class="img-container">
+				<%= link_to(image_tag(evnt.correct_img_url), gallery_index_path) %>
+			</div>
+			<div class="buy-button">Buy Tickets</div>
+			<p><%= evnt.licensee %></p>
+		</div>
+	</div>
+<% end %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  licensee: MyString
+  date: MyString
+  title: MyString
+  location: MyString
+  bio: MyString
+  series_info: MyString
+  performers: MyString
+  img_url: MyString
+
+two:
+  licensee: MyString
+  date: MyString
+  title: MyString
+  location: MyString
+  bio: MyString
+  series_info: MyString
+  performers: MyString
+  img_url: MyString

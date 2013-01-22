@@ -1,0 +1,254 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	font-family:'Big Caslon', georgia, serif;
+	font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased; /* Firefox 4 */
+	-webkit-font-smoothing:antialiased; /* Safari and Chrome */
+	-o-font-smoothing:antialiased; /* Opera */
+	background-color: #FAF9F5;
+	color:#333;
+	padding:20px;
+	
+	#main {
+		width:960px;
+		margin:0 auto;
+		
+		.header {
+			height:136px;
+			margin-bottom:40px;
+			
+			h1 {
+				color:#B8B4AE;
+				font-family:'graphik', helvetica, arial, sans-serif;
+				font-size:80px;
+				font-weight:600;
+				letter-spacing:1px;
+				line-height:72px;
+				margin-bottom:5px;
+				padding-bottom:10px;
+				border-bottom:2px solid #B8B4AE;
+/*				text-align:center;*/
+				text-transform:uppercase;
+				
+				span {
+					font-weight:100;
+					border-bottom:2px solid #D63732;
+				}
+			}
+			
+			.subhead {
+				position:absolute;
+				background-color:#D63732;
+				display:inline;
+				float:left;
+				width:618px;
+				padding:5px 10px;
+				z-index:100;
+				
+				p {
+					color:#FAF9F5;
+					font-size:14px;
+					font-weight:100;
+					letter-spacing:1px;
+					line-height:0;
+				}
+			}
+			
+			#nav {
+				display:inline;
+				float:left;
+				background-color: #FAF9F5;
+				font-family:'graphik', helvetica, arial, sans-serif;
+				font-size:11px;
+				width:960px;
+				height:47px;
+				text-transform:uppercase;
+				z-index:3;
+				
+				h2 {
+					display:inline-block;
+					flaot:left;
+					
+					color:#B8B4AE;
+					cursor:pointer;
+					font-family:'graphik', helvetica, arial, sans-serif;
+					font-size:22px;
+					font-weight:600;
+					margin-top:12px; margin-bottom:6px;
+					padding: 0 0 10px 0;
+					
+					span {
+						font-weight:100;
+					}
+				}
+				
+				ul {
+					display:inline;
+					float:right;
+					color:#666;
+					font-weight:100;
+					list-style-type:none;
+					margin:0; padding-left:0;
+					
+					li {
+						display:inline;
+						float:left;
+						list-style-type:none;
+						background:#fff;
+						border:1px solid #EBEAE5;
+
+						cursor:pointer;
+						padding:12px 12px;
+					}
+					
+					li:hover {
+						color:#000;	
+						background-color:#EBEAE5;
+					}
+
+					li:active {
+						box-shadow: inset 0px 0px 14px rgba(154, 148, 141, 1);
+					}
+					
+					li#allEvents {
+						border-top-left-radius: 12px;
+						-moz-border-radius-topleft: 12px;
+						-webkit-border-top-left-radius: 12px;
+
+						border-bottom-left-radius: 12px;
+						-moz-border-radius-bottomleft: 12px;
+						-webkit-border-bottom-left-radius: 12px;
+					}
+					
+					li#carnEvents {}
+					
+					li#non-carnEvents {
+						border-top-right-radius: 12px;
+						-moz-border-radius-topright: 12px;
+						-webkit-border-top-right-radius: 12px;
+
+						border-bottom-right-radius: 12px;
+						-moz-border-radius-bottomright: 12px;
+						-webkit-border-bottom-right-radius: 12px;
+					}
+					
+				}
+				
+				
+			}
+			
+			
+			.fixed {
+				position:fixed;
+				top: 0;
+				border-bottom:2px solid #B8B4AE;
+				padding-top:8px;
+				z-index:99;
+				
+				h2 {
+					border-bottom:2px solid #D63732;
+				}
+			}
+			
+			
+		}
+		
+		#view {
+			position:relative;
+			z-index:1;
+			
+			font-family:'graphik', helvetica, arial, sans-serif;
+			margin-bottom:30px;
+			
+			
+			h2 {
+				border-bottom: 1px solid #e2e2e2;
+				color:#6B635B;
+				font-size:28px;
+				font-weight:400;
+				margin:0 0 20px 0;
+				padding:0 0 10px 0;
+			}
+			
+			div.tooltip-gallery {
+				position:absolute;
+				display:none;
+				
+				color:#fff;
+				font-size:14px;
+				font-weight:100;
+				opacity:0.95;
+/*				text-transform:uppercase;*/
+				width:120px;
+				z-index:999;
+				
+				.tooltip-gallery-box {
+					background-color:#D63732;
+					min-height:20px;
+					padding: 14px 14px;
+					text-align:center;
+				}
+				
+				.tooltip-gallery-triangle {
+					border-style: solid;
+					border-width: 20px 20px 0 20px;
+					border-color: rgba(214, 56, 50, 0.95) transparent transparent transparent;
+					height: 0px;
+					margin-left:34%;
+					width: 0px;
+				}
+			}
+			
+			
+		}
+	}
+	
+	#footer {
+		color:#9A948D;
+		border-top:2px solid #EBEAE5;
+		font-family:'graphik', helvetica, arial, sans-serif;
+		height:500px;
+		padding-top:20px;
+		
+		h4 {
+			font-size:30px;
+			margin:0 0 0 0;
+			text-align:center;
+			
+			span {
+				border-top:2px solid #9A948D;
+				padding-top:20px;
+				color:#9A948D;
+			}
+		}
+	}
+	
+	#footer:hover {
+		
+		color:#EBEAE5;
+		
+		transition-duration: 0.7s;
+		-moz-transition-duration: 0.7s; /* Firefox 4 */
+		-webkit-transition-duration: 0.7s; /* Safari and Chrome */
+		-o-transition-duration: 0.7s; /* Opera */
+	}
+	
+	
+	/*  Formerly known as "Clearfix"  */ 
+	/*.group {display: inline-block;}*/
+	.group:after {content: "."; clear: both;display: block;font-size: 0;height: 0;visibility: hidden;}
+	
+}

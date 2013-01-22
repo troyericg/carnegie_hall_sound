@@ -1,0 +1,207 @@
+// Place all the styles related to the List controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-entry {
+	
+	background-color:#fff;
+	border: 1px solid #EBEAE5;
+	color:#666;
+	font-family:'graphik', helvetica, arial, sans-serif;
+	margin-bottom:40px;
+	padding:30px 30px 30px 30px;
+	position:relative;
+	
+	
+	div.column1-controls {
+		position:absolute;
+		top:30px;
+		margin-right:20px;
+		width:56px;
+		
+		.player-play {
+			display:inline;
+			float:left;
+			border-style: solid;
+			border-width: 18px 0 18px 20px;
+			border-color: transparent transparent transparent rgba(184, 180, 174, 0.5); /*#B8B4AE*/
+			cursor:pointer;
+			height: 0px;
+			width: 0px;
+			margin-right:4px;
+		}
+		
+		.player-play:hover {
+			border-color: transparent transparent transparent rgba(184, 180, 174, 0.9);
+		}
+		
+		.player-pause {
+			cursor:pointer;
+			display:inline;
+			float:left;
+			width:20px;
+			opacity:0.5;
+			
+			.bar {
+				display:inline;
+				float:left;
+				background-color:#B8B4AE;
+				width:7px;
+				height:32px;
+				margin:2px 3px 0 0;
+			}
+		}
+		
+		.player-pause:hover {
+			opacity:0.9;
+		}
+	}
+	
+	div.column2 {
+		display:inline;
+		float:left;
+		padding-left:80px;
+		margin-right:40px;
+		width:400px;
+		
+		span.kicker {
+			display:none;
+
+			p {
+
+			}
+		}
+
+		span.date {
+
+			p {
+				font-size:16px;
+				font-weight:lighter;
+				letter-spacing:1px;
+				margin:0 0 10px 0;
+				opacity:0.8;
+			}
+		}
+
+		h3 {
+			font-size:30px;
+			font-weight:lighter;
+			margin:0 0 10px 0;
+		}
+
+		p.bio {
+			color:#333;
+			font-size:15px;
+			line-height:22px;
+		}
+
+		p.info {
+			color:#9A948D;
+			font-size:11px;
+			font-style:italic;
+		}
+
+
+		.two-column-container {
+
+			border-top:1px solid #EBEAE5;
+			margin-top:20px;
+			padding-top:20px;
+
+			.half-column-left, .half-column-right {
+				display:inline;
+				float:left;
+				width:166px;
+
+				h4 {
+					font-size:16px;
+					margin:0;
+				}
+
+				p {
+					font-size:14px;
+					line-height:24px;
+				}
+			}
+			
+			.half-column-left {margin-right:40px}
+		}
+	}
+	
+	div.column3-img {
+		display:inline;
+		float:right;
+		height:100%;
+		width:300px;
+		
+		.img-container {
+			background-color:#B8B4AE;
+			height:225px;
+			margin-bottom:10px;
+			width:300px;
+			overflow:hidden;
+			
+			img {
+				height:auto;
+				min-width:100%;
+			}
+		}
+		
+		div.buy-button {
+			display:inline;
+			float:left;
+			
+			background-color:#D63732;
+			border-radius:8px;
+			-moz-border-radius:8px; /* Firefox 4 */
+			-webkit-border-radius:8px; /* Safari and Chrome */
+			-o-border-radius:8px; /* Opera */
+			color:#fff;
+			cursor:pointer;
+			margin-right:10px;
+			padding:6px 10px;
+		}
+		
+		div.buy-button:hover {
+			background-color:#A81817;
+			
+			transition-duration: 0.4s;
+			-moz-transition-duration: 0.4s; /* Firefox 4 */
+			-webkit-transition-duration: 0.4s; /* Safari and Chrome */
+			-o-transition-duration: 0.4s; /* Opera */
+		}
+		
+		p {
+			display:inline;
+			float:right;
+			color:#9A948D;
+			font-size:12px;
+			line-height:14px;
+			margin:2px 0 0 0;
+			width:160px;
+		}
+		
+	}
+	
+	
+}
+
+
+.event-entry:hover {
+/*	box-shadow:0px 2px 14px rgba(184, 180, 174, 0.7);
+	-moz-box-shadow:0px 2px 14px rgba(184, 180, 174, 0.7);
+	-webkit-box-shadow:0px 2px 14px rgba(184, 180, 174, 0.7);
+	-o-box-shadow:0px 2px 14px rgba(184, 180, 174, 0.7);*/
+	
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s; /* Firefox 4 */
+	-webkit-transition-duration: 0.4s; /* Safari and Chrome */
+	-o-transition-duration: 0.4s; /* Opera */
+	
+}
+
+/* VENDOR PREFIXES */
+
+/*-moz-*/ /* Firefox 4 */
+/*-webkit-*/ /* Safari and Chrome */
+/*-o-*/ /* Opera */
