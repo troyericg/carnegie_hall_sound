@@ -1,8 +1,16 @@
 ChSound::Application.routes.draw do
-  get "list/index"
-
-  get "gallery/index"
-
+  #get "list/index"
+  #get "gallery/index"
+  resources :list, :gallery
+  
+  # Set List/index as root
+  # app can now be accessed at 0.0.0.0:3000
+  # instead of 0.0.0.0:3000/list/index
+  
+  root :to => "gallery#index"
+  
+  root :to => "list#index", as: "list"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
