@@ -12,9 +12,9 @@ $(document).ready(function(){
 			var player = $(this).find('.column1-controls');
 			var boxBottom = $(this).position().top + $(this).innerHeight();
 			
-			if ($win.scrollTop() + 40 >= $(this).offset().top) {
+			if ($win.scrollTop() >= $(this).offset().top - 60) {
 				player.css({'position':'fixed','top':70, 'bottom':'auto' });
-			} if ($win.scrollTop() >= boxBottom + 55) {
+			} if ($win.scrollTop() - 105 >= boxBottom) {
 				player.css({'position':'absolute', 'top':'auto', 'bottom':30 });
 			} else if ($win.scrollTop() <= $(this).offset().top) {
 				player.css({'position':'absolute', 'top': 30, 'bottom':'auto' });

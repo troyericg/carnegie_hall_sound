@@ -33,6 +33,25 @@ $(document).ready(function(){
 			$('.tooltip-gallery').hide();
 	});
 	
+	// on hover: Display audio info 
+	$('.column1-controls').hover(function(){
+		
+		$('.tooltip-list').stop().delay(1000).fadeIn();
+		
+		$(this).mousemove(function(e){
+			
+			
+			var alph = $(this);
+			var yPos = alph.offset().top; 
+			var xPos = alph.offset().left;
+			var tooltip = $('.tooltip-list');
+			
+			tooltip.css({'left': xPos - 80, 'top': yPos - 295 });
+		});
+		}, function(){
+			$('.tooltip-list').fadeOut('fast');
+	});
+	
 	// on scroll: Unhook nav
 	$(window).scroll(function() {
 		var $win = $(this);
@@ -49,13 +68,19 @@ $(document).ready(function(){
 		$('html, body').animate({scrollTop: 0},'fast');
 	});
 	
+	// on click: clear filters
 	$('li#allEvents').click(function(){
+		$('li').removeClass('tagged'); $(this).addClass('tagged');
+		
 		$('div.gallery-img-container, div.event-entry').each(function(){
 			$(this).show();
 		});
 	});
 	
+	// on click: show only carnegie hall events
 	$('li#carnEvents').click(function(){
+		$('li').removeClass('tagged'); $(this).addClass('tagged');
+		
 		$('div.gallery-img-container, div.event-entry').each(function(){
 			$(this).hide();
 			var presenter = $(this).attr('attr-presenter');
@@ -65,7 +90,10 @@ $(document).ready(function(){
 		});
 	});
 	
+	// on click: show only non-carnegie hall events
 	$('li#non-carnEvents').click(function(){
+		$('li').removeClass('tagged'); $(this).addClass('tagged');
+		
 		$('div.gallery-img-container, div.event-entry').each(function(){
 			$(this).hide();
 			var presenter = $(this).attr('attr-presenter');
