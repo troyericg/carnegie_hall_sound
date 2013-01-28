@@ -27,7 +27,7 @@ $(document).ready(function(){
 			var yPos = alph.offset().top; 
 			var xPos = alph.offset().left;
 			$('.tooltip-gallery-box').html(alph.attr('attr-date'));
-			tooltip.css({'left': xPos - 121, 'top': yPos - 280 });
+			tooltip.css({'left': xPos - 121, 'top': yPos - 320 });
 		});
 		}, function(){
 			$('.tooltip-gallery').hide();
@@ -39,8 +39,6 @@ $(document).ready(function(){
 		$('.tooltip-list').stop().delay(1000).fadeIn();
 		
 		$(this).mousemove(function(e){
-			
-			
 			var alph = $(this);
 			var yPos = alph.offset().top; 
 			var xPos = alph.offset().left;
@@ -68,11 +66,15 @@ $(document).ready(function(){
 		$('html, body').animate({scrollTop: 0},'fast');
 	});
 	
+	
+	//-------------------- FILTERS --------------------//
+	
 	// on click: clear filters
 	$('li#allEvents').click(function(){
 		$('li').removeClass('tagged'); $(this).addClass('tagged');
 		
 		$('div.gallery-img-container, div.event-entry').each(function(){
+			$(this).find($('.swf-player')).remove();
 			$(this).show();
 		});
 	});
@@ -83,6 +85,7 @@ $(document).ready(function(){
 		
 		$('div.gallery-img-container, div.event-entry').each(function(){
 			$(this).hide();
+			$(this).find($('.swf-player')).remove();
 			var presenter = $(this).attr('attr-presenter');
 			if (presenter == "CARNEGIE HALL PRESENTS" ) {
 				$(this).show();
@@ -96,6 +99,7 @@ $(document).ready(function(){
 		
 		$('div.gallery-img-container, div.event-entry').each(function(){
 			$(this).hide();
+			$(this).find($('.swf-player')).remove();
 			var presenter = $(this).attr('attr-presenter');
 			if (presenter != "CARNEGIE HALL PRESENTS" ) {
 				$(this).show();

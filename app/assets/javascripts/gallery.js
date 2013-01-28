@@ -8,11 +8,18 @@
 
 $(document).ready(function(){
 	
+	$('div.gallery-img-container').each(function(){
+		if ( $(this).attr('attr-audioID').length < 2 ) {
+			$(this).css({'opacity':0.4});
+		}
+	});
+	
+	
 	// On Click: Play button builds player from scratch, feeding in the audio ID.
 	$('div.gallery-img-container').click(function(){
-		var audioID = "t8440011a8e11";
+		var audioID = $(this).attr('attr-audioID');
 		
-		//if ( $('div.gallery-img-container').html().length < 1 ) {
+		if ( $(this).attr('attr-audioID').length > 2 ) {
 			var swfPlayer = $('<object></object>').addClass('swf-player').attr('type','application/x-shockwave-flash')
 					.attr('id','embedded_player_' + audioID)
 					.attr('name','embedded_player_' + audioID)
@@ -26,16 +33,14 @@ $(document).ready(function(){
 			$('<param>').attr('name','allowscriptaccess').attr('value','always').appendTo(swfPlayer);
 			$('<param>').attr('name','autoplay').attr('value','true').appendTo(swfPlayer);
 			$('<param>').attr('name','base').attr('value','http://mediaservice.mirror-image.com').appendTo(swfPlayer);
-			$('<param>').attr('name','flashVars').attr('value','t=' + audioID + '&amp;autoplay=true').appendTo(swfPlayer);
+			$('<param>').attr('name','flashVars').attr('value', audioID + '&amp;autoplay=true').appendTo(swfPlayer);
 			$('<param>').attr('name','movie').attr('value','http://mediaservice.mirror-image.com/plugins/player.swf').appendTo(swfPlayer);
 			$('<param>').attr('name','wmode').attr('value','transparent').appendTo(swfPlayer);
 
 			swfPlayer.appendTo($(this));
 			
-		//}
+		}
 		
 	});
-	
-	$(this).find('object').fadeOut('slow');
 	
 });

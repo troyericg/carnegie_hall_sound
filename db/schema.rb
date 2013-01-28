@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130105175222) do
+ActiveRecord::Schema.define(:version => 20130127160437) do
 
   create_table "events", :force => true do |t|
-    t.string   "licensee"
+    t.string   "presenter"
     t.string   "date"
     t.string   "title"
     t.string   "location"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(:version => 20130105175222) do
     t.string   "img_url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "audio_id"
+    t.text     "audio_info"
+    t.string   "price"
+    t.string   "ticket_link"
   end
 
 end
