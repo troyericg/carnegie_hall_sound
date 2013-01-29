@@ -89,9 +89,9 @@ namespace :db do
         puts "- audio Info: #{audioInfo}"
         
         #grabs ticket purchasing link 
-        ticketLink = cur_page.xpath('//a[contains(text(),"Buy Tickets")]').map { |link| link['href'] }
-        event.ticket_link = ticketLink.to_s
-        puts "- ticket link"
+        ticketID = cur_page.css('a.sc-ivite').map { |link| link['href'].match(/\d+/) }
+        ticketLink = "https://www.carnegiehall.org/SiteCode/Purchase/SYOS/SeatSelection.aspx?startWorkflow=true&quickBuy=false&quantity=0&eventId=#{ticketID}"
+        puts "- ticket ID: #{ticketID}"
 
         #grabs ticket price
         ticketPrice = cur_page.css('.evnt-priceInfo').text
