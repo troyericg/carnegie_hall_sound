@@ -75,13 +75,13 @@ namespace :db do
         
         #grabs image url and uses regexes to turn them into useable links
         img_url = cur_page.css('img.event').map { |link| link['src'].match(regex_img).to_s.gsub!(/\i\./, "www.") }
-        event.img_url = img_url.to_s
-        puts "- image url!"
+        event.img_url = img_url[0]
+        puts "- image url: #{img_url[0]}"
         
         #grabs audio file ID
         audioID = cur_page.css('param[name="flashVars"]').map { |para| para['value'] }
-        event.audio_id = audioID.to_s
-        puts "- audio ID: #{audioID}"
+        event.audio_id = audioID[0]
+        puts "- audio ID: #{audioID[0]}"
         
         #grabs audio file info 
         audioInfo = cur_page.css('.event-right-display .evnt-audio').text.gsub!(/\s+/," ")
@@ -90,8 +90,9 @@ namespace :db do
         
         #grabs ticket purchasing link 
         ticketID = cur_page.css('a.sc-ivite').map { |link| link['href'].match(/\d+/) }
-        ticketLink = "https://www.carnegiehall.org/SiteCode/Purchase/SYOS/SeatSelection.aspx?startWorkflow=true&quickBuy=false&quantity=0&eventId=#{ticketID}"
-        puts "- ticket ID: #{ticketID}"
+        ticketLink = "https://www.carnegiehall.org/SiteCode/Purchase/SYOS/SeatSelection.aspx?startWorkflow=true&quickBuy=false&quantity=0&eventId=#{ticketID[0]}"
+        event.ticket_link = ticketLink
+        puts "- ticket ID: #{ticketID[0]}"
 
         #grabs ticket price
         ticketPrice = cur_page.css('.evnt-priceInfo').text

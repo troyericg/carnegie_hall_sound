@@ -8,11 +8,11 @@
 
 $(document).ready(function(){
 	
-	$('div.gallery-img-container').each(function(){
-		if ( $(this).attr('attr-audioID').length < 2 ) {
-			$(this).css({'opacity':0.4});
-		}
-	});
+	// $('div.gallery-img-container').each(function(){
+	// 	if ( $(this).attr('attr-audioID').length < 2 ) {
+	// 		$(this).css({'opacity':0.4});
+	// 	}
+	// });
 	
 	
 	// On Click: Play button builds player from scratch, feeding in the audio ID.
