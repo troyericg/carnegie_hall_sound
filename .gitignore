@@ -16,6 +16,9 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
+# Ignore any test databases I create.
+/db/*.sqlite
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
