@@ -3,7 +3,7 @@
 
 <% @events.each do |evnt| %>
 
-	<div id="<%= evnt.id %>" class="event-entry group" attr-presenter="<%= evnt.presenter %>">
+	<div id="<%= evnt.id %>" class="event-entry group" attr-presenter="<%= evnt.presenter %>" attr-audioID="<%= evnt.audio_id %>">
 		<div class="column1-controls group">
 			<div class="player-play"></div>
 			<div class="player-pause">

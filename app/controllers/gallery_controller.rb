@@ -3,6 +3,8 @@ class GalleryController < ApplicationController
     @whereabouts = "This is the Gallery View."
     @time = Time.now.asctime
     @events = Event.all
+
+    @events_with_music = Event.with_music
     
   end
   

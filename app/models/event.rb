@@ -12,6 +12,8 @@ class Event < ActiveRecord::Base
     timeDate = Time.parse(self.date)
     timeDate.strftime("%A, %B %d, %Y")
   end
+
+  scope :with_music, {:conditions => [ "audio_id != ?", "" ]}
   
   # def correct_audio_id
   #   if self.audio_id != nil

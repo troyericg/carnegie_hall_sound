@@ -15,18 +15,22 @@ namespace :db do
     regex_title = /(M\/)([\w+\-]+)/
     regex_img = /http:(.+)\.\w+/  #to grab http
     
-    #Set up empty arrays
-    #loc = []
+    #Set up empty array
     pageLinks = []
+
+    #Sets up error count 
     count = 0
 
     #Set up mechanize
     agent = Mechanize.new()
     agent.get(URL)
     
-    #Grabs all event links and puts them in an array
-    agent.page.search(".event_title a").each do |link|
-      pageLinks << BASE_URL + link['href']
+    #Grabs all event links and locations and puts them in a 2-dimensional array
+    agent.page.search("ul.cal_event").each do |lnk|
+      shows = []
+      shows << lnk.search("li.event_loc").text
+      shows << BASE_URL + lnk.search(".event_title a")[0]['href']
+      pageLinks << shows
     end
     
     #TK: Will grab all event locations and add them to a multidimensional array
@@ -40,7 +44,7 @@ namespace :db do
       event = Event.new()
       
       begin
-        cur_page = Nokogiri::HTML(open(pg))
+        cur_page = Nokogiri::HTML(open(pg[1]))
         
         #grabs event title/performer
         showTitle = cur_page.css('.eventTitle').text.strip
@@ -56,6 +60,10 @@ namespace :db do
         showDate = cur_page.css('span.event_date').text.strip
         event.date = showDate
         puts "date: #{showDate}"
+
+        showLoc = pg[0]
+        event.location = showLoc
+        puts "location: #{showLoc}"
         
         #grabs intro/bio paragraph
         introBio = cur_page.css('.event-general-notes').text.strip

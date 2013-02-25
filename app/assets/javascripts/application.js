@@ -26,7 +26,7 @@ $(document).ready(function(){
 			var tooltip = $('.tooltip-gallery');
 			var yPos = alph.offset().top; 
 			var xPos = alph.offset().left;
-			$('.tooltip-gallery-box').html(alph.attr('attr-date'));
+			$('.tooltip-gallery-box').html(alph.attr('attr-date') + "<br />" + alph.attr('attr-loc'));
 			tooltip.css({'left': xPos - 121, 'top': yPos - 320 });
 		});
 		}, function(){
@@ -80,14 +80,14 @@ $(document).ready(function(){
 	});
 	
 	// on click: show only carnegie hall events
-	$('li#carnEvents').click(function(){
+	$('li#carnAudio').click(function(){
 		$('li').removeClass('tagged'); $(this).addClass('tagged');
 		
 		$('div.gallery-img-container, div.event-entry').each(function(){
 			$(this).hide();
 			$(this).find($('.swf-player')).remove();
-			var presenter = $(this).attr('attr-presenter');
-			if (presenter == "CARNEGIE HALL PRESENTS" ) {
+			var audioID = $(this).attr('attr-audioID');
+			if (audioID != "" ) {
 				$(this).show();
 			}
 		});
