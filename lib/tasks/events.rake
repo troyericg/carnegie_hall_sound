@@ -33,11 +33,6 @@ namespace :db do
       pageLinks << shows
     end
     
-    #TK: Will grab all event locations and add them to a multidimensional array
-    # agent.page.search(".event_loc").each do |txt|
-    #   loc << txt.text
-    # end
-    
     
     pageLinks.each do |pg|
       
