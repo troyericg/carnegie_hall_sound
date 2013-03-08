@@ -23,14 +23,15 @@
 			</div>
 		</div>
 		<div id="view" class="group">
+			<%= link_to list_index_path do %>
 			<div class="tooltip-gallery">
 				<div class="tooltip-gallery-box">Name<br />Location</div>
 				<div class="tooltip-gallery-triangle"></div>
 			</div>
+			<% end %>
 			<div class="tooltip-list">
 				<div class="tooltip-list-box"><p>Name of piece<br />Name of performer<br />Another name for something</p></div>
 				<div class="tooltip-list-triangle"></div>
-				
 			</div>
 			<%= yield %>
 		</main>

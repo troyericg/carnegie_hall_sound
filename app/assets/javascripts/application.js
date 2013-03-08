@@ -19,19 +19,36 @@
 $(document).ready(function(){
 	
 	// on hover: Display event date info 
-	$('.gallery-img-container').hover(function(e){
-		$('.tooltip-gallery').stop().show();
-		$(this).mousemove(function(e){
-			var alph = $(this);
-			var tooltip = $('.tooltip-gallery');
-			var yPos = alph.offset().top; 
-			var xPos = alph.offset().left;
-			$('.tooltip-gallery-box').html(alph.attr('attr-date') + "<br />" + alph.attr('attr-loc'));
-			tooltip.css({'left': xPos - 121, 'top': yPos - 320 });
+	$('#view').hover(function(){ // First hover event doesn't fire!!!!
+		$('.gallery-img-container').hover(function(e){
+			$('.tooltip-gallery').stop().show();
+			$(this).mousemove(function(e){
+				var alph = $(this);
+				var tooltip = $('.tooltip-gallery');
+				var yPos = alph.offset().top; 
+				var xPos = alph.position().left;
+				$('.tooltip-gallery-box').html(alph.attr('attr-date') + "<br />" + alph.attr('attr-loc'));
+				tooltip.css({'left': xPos, 'top': yPos - 320 });
+			});
+			}, function(){
+				// $('.tooltip-gallery').hide();
 		});
-		}, function(){
-			$('.tooltip-gallery').hide();
+	}, function(){
+		$('.tooltip-gallery').hide();
 	});
+	// $('.gallery-img-container').hover(function(e){
+	// 	$('.tooltip-gallery').stop().show();
+	// 	$(this).mousemove(function(e){
+	// 		var alph = $(this);
+	// 		var tooltip = $('.tooltip-gallery');
+	// 		var yPos = alph.offset().top; 
+	// 		var xPos = alph.position().left;
+	// 		$('.tooltip-gallery-box').html(alph.attr('attr-date') + "<br />" + alph.attr('attr-loc'));
+	// 		tooltip.css({'left': xPos, 'top': yPos - 320 });
+	// 	});
+	// 	}, function(){
+	// 		// $('.tooltip-gallery').hide();
+	// });
 	
 	// on hover: Display audio info 
 	$('.column1-controls').hover(function(){
@@ -41,10 +58,10 @@ $(document).ready(function(){
 		$(this).mousemove(function(e){
 			var alph = $(this);
 			var yPos = alph.offset().top; 
-			var xPos = alph.offset().left;
+			var xPos = alph.position().left;
 			var tooltip = $('.tooltip-list');
 			
-			tooltip.css({'left': xPos - 80, 'top': yPos - 295 });
+			tooltip.css({'left': xPos + 50, 'top': yPos - 295 });
 		});
 		}, function(){
 			$('.tooltip-list').fadeOut('fast');
