@@ -2,7 +2,7 @@
 <p>Find me in app/views/gallery/index.html.erb</p> -->
 
 <% @events.each do |evnt| %>
-	<div id="<%= evnt.id %>" class="gallery-img-container group" attr-presenter="<%= evnt.presenter %>" attr-title="<%= evnt.title %>" attr-date="<%= evnt.correct_date %>" attr-loc="<%= evnt.location %>" attr-audioID="<%= evnt.audio_id %>">
+	<div id="<%= evnt.id %>" class="gallery-img-container group" attr-presenter="<%= evnt.presenter %>" attr-title="<%= evnt.title %>" attr-date="<%= correct_date(evnt.date) %>" attr-loc="<%= evnt.location %>" attr-audioID="<%= evnt.audio_id %>">
 		<%= image_tag(evnt.img_url) %>
 	</div>
 <% end %>

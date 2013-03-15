@@ -8,10 +8,7 @@ class Event < ActiveRecord::Base
   #   new_url
   # end
   
-  def correct_date
-    timeDate = Time.parse(self.date)
-    timeDate.strftime("%A, %B %d, %Y")
-  end
+
 
   scope :with_music, {:conditions => [ "audio_id != ?", "" ]}
   
